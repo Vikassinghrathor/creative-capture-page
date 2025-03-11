@@ -37,6 +37,36 @@
 
     --radius: 0.75rem;
   }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 10% 9%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 95%;
+    --primary-foreground: 240 10% 8%;
+
+    --secondary: 240 10% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 10% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 276 91% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 260 70% 55%;
+  }
 }
 
 @layer base {
@@ -78,7 +108,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/90 backdrop-blur-lg border border-white/20 shadow-sm;
+    @apply bg-white/90 dark:bg-white/10 backdrop-blur-lg border border-white/20 shadow-sm;
   }
   
   .nav-link {
@@ -174,4 +204,17 @@
 
 .animate-on-scroll.blur-in-active {
   @apply animate-blur-in;
+}
+
+/* Dark mode specific styles */
+.dark .glass-card {
+  @apply border-gray-800/30;
+}
+
+.dark .btn-primary {
+  @apply bg-accent text-white hover:bg-accent/90;
+}
+
+.dark .nav-link {
+  @apply text-gray-300 hover:text-accent;
 }
