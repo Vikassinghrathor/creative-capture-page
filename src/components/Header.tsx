@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,8 +32,8 @@ const Header = () => {
       }`}
     >
       <div className="container-custom flex items-center justify-between">
-        <a href="#" className="text-xl md:text-2xl font-bold tracking-tight">
-          Create<span className="text-primary">Studios</span>
+        <a href="#" className="text-xl md:text-2xl font-bold tracking-tight font-display">
+          Create<span className="text-accent">Studios</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -41,12 +42,11 @@ const Header = () => {
           <a href="#about" className="nav-link">About</a>
           <a href="#testimonials" className="nav-link">Testimonials</a>
           <a href="#contact" className="nav-link">Contact</a>
-          <a 
-            href="#contact" 
-            className="btn btn-primary ml-4 px-6 py-2"
+          <Button 
+            className="ml-4 px-6 py-6 bg-accent hover:bg-accent/90 text-accent-foreground font-medium shadow-lg hover:shadow-xl transition-all duration-300"
           >
-            Get Started
-          </a>
+            Get Started Now
+          </Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -65,14 +65,14 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       <div 
-        className={`md:hidden fixed inset-0 z-40 bg-white transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-md transform transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="flex flex-col h-full p-6">
           <div className="flex justify-between items-center mb-8">
-            <a href="#" className="text-xl font-bold tracking-tight">
-              Create<span className="text-primary">Studios</span>
+            <a href="#" className="text-xl font-bold tracking-tight font-display">
+              Create<span className="text-accent">Studios</span>
             </a>
             <button 
               className="text-foreground focus:outline-none"
@@ -111,13 +111,12 @@ const Header = () => {
             >
               Contact
             </a>
-            <a 
-              href="#contact"
-              className="btn btn-primary px-6 py-3 text-center mt-4"
+            <Button 
+              className="px-6 py-6 bg-accent hover:bg-accent/90 text-accent-foreground font-medium shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
               onClick={toggleMobileMenu}
             >
-              Get Started
-            </a>
+              Get Started Now
+            </Button>
           </nav>
         </div>
       </div>

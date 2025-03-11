@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,32 +8,32 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 15%;
+    --foreground: 240 10% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card-foreground: 240 10% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 240 10% 15%;
 
-    --primary: 220 70% 55%;
+    --primary: 260 70% 55%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 220 25% 95%;
-    --secondary-foreground: 220 20% 15%;
+    --secondary: 240 15% 97%;
+    --secondary-foreground: 240 10% 15%;
 
-    --muted: 220 20% 96%;
-    --muted-foreground: 220 20% 40%;
+    --muted: 240 15% 96%;
+    --muted-foreground: 240 10% 40%;
 
-    --accent: 230 70% 60%;
+    --accent: 276 91% 58%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 20% 92%;
-    --input: 220 20% 92%;
-    --ring: 220 70% 55%;
+    --border: 240 10% 92%;
+    --input: 240 10% 92%;
+    --ring: 260 70% 55%;
 
     --radius: 0.75rem;
   }
@@ -54,7 +56,7 @@
 
   /* Typography styling */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-medium tracking-tight;
+    @apply font-display font-medium tracking-tight;
   }
   
   h1 {
@@ -80,12 +82,12 @@
   }
   
   .nav-link {
-    @apply relative px-3 py-2 text-sm font-medium transition-colors hover:text-primary;
+    @apply relative px-3 py-2 text-sm font-medium transition-colors hover:text-accent;
   }
   
   .nav-link:after {
     content: '';
-    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-out;
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 ease-out;
   }
   
   .nav-link:hover:after {
