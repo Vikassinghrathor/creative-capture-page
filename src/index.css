@@ -149,11 +149,11 @@
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground shadow hover:bg-primary/90;
+    @apply bg-primary text-primary-foreground shadow hover:bg-primary/90 dark:bg-accent dark:hover:bg-accent/90 dark:text-white;
   }
 
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80 dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted/80;
   }
 
   .btn-ghost {
@@ -161,7 +161,7 @@
   }
 
   .input-field {
-    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+    @apply flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-muted dark:border-white/10;
   }
 }
 

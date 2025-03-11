@@ -137,7 +137,7 @@ const ContactForm = () => {
             ref={formRef}
             className="animate-on-scroll"
           >
-            <div className="glass-card rounded-xl p-6 md:p-8 shadow-lg">
+            <div className="glass-card rounded-xl p-6 md:p-8 shadow-lg dark:shadow-none dark:border-white/10">
               <form onSubmit={handleSubmit}>
                 <div className="space-y-5">
                   <div>
@@ -150,7 +150,7 @@ const ContactForm = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`input-field ${formErrors.name ? 'border-red-500' : ''}`}
+                      className={`input-field ${formErrors.name ? 'border-red-500' : ''} dark:bg-muted dark:border-white/10`}
                       placeholder="Your name"
                     />
                     {formErrors.name && (
@@ -171,7 +171,7 @@ const ContactForm = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`input-field ${formErrors.email ? 'border-red-500' : ''}`}
+                      className={`input-field ${formErrors.email ? 'border-red-500' : ''} dark:bg-muted dark:border-white/10`}
                       placeholder="you@example.com"
                     />
                     {formErrors.email && (
@@ -192,7 +192,7 @@ const ContactForm = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className={`input-field ${formErrors.phone ? 'border-red-500' : ''}`}
+                      className={`input-field ${formErrors.phone ? 'border-red-500' : ''} dark:bg-muted dark:border-white/10`}
                       placeholder="Your phone number (optional)"
                     />
                     {formErrors.phone && (
@@ -213,7 +213,7 @@ const ContactForm = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className={`input-field resize-none ${formErrors.message ? 'border-red-500' : ''}`}
+                      className={`input-field resize-none ${formErrors.message ? 'border-red-500' : ''} dark:bg-muted dark:border-white/10`}
                       placeholder="Tell us about your project"
                     />
                     {formErrors.message && (
@@ -227,7 +227,7 @@ const ContactForm = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn btn-primary w-full py-3"
+                    className="btn btn-primary w-full py-3 dark:bg-accent dark:hover:bg-accent/90"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">
@@ -255,7 +255,7 @@ const ContactForm = () => {
           >
             <div className="relative">
               {/* Main content */}
-              <div className="bg-primary text-white rounded-xl p-8 shadow-lg relative z-10">
+              <div className="bg-primary text-white dark:bg-accent rounded-xl p-8 shadow-lg relative z-10">
                 <h3 className="text-2xl font-semibold mb-6">Let's Create Something Amazing Together</h3>
                 
                 <div className="space-y-6">
@@ -290,7 +290,7 @@ const ContactForm = () => {
               </div>
               
               {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full bg-accent rounded-xl -z-10"></div>
+              <div className="absolute -bottom-4 -right-4 w-full h-full bg-accent dark:bg-primary rounded-xl -z-10"></div>
             </div>
           </div>
         </div>

@@ -62,7 +62,7 @@ const About = () => {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-square md:aspect-auto md:h-[500px] shadow-xl">
               {/* Placeholder for about image */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary via-accent to-primary/70"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary via-accent to-primary/70 dark:from-accent dark:via-accent/80 dark:to-primary/60"></div>
               <div className="absolute inset-0 flex items-center justify-center text-white">
                 <div className="text-center p-6">
                   <h3 className="text-2xl font-medium mb-3">Creative Excellence</h3>
@@ -72,8 +72,8 @@ const About = () => {
             </div>
             
             {/* Decorative elements */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary rounded-lg"></div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-white rounded-lg shadow-lg"></div>
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary dark:bg-muted rounded-lg"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-white dark:bg-muted/60 rounded-lg shadow-lg"></div>
           </div>
 
           {/* Right side - About Content */}
@@ -92,13 +92,13 @@ const About = () => {
             <div className="grid sm:grid-cols-2 gap-x-6 gap-y-4 mt-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-accent mr-2 mt-0.5 flex-shrink-0" />
                   <span>{feature}</span>
                 </div>
               ))}
             </div>
 
-            <a href="#contact" className="btn btn-primary px-6 py-3 mt-6 inline-flex">
+            <a href="#contact" className="btn btn-primary px-6 py-3 mt-6 inline-flex dark:bg-accent dark:hover:bg-accent/90">
               Work With Us
             </a>
           </div>
