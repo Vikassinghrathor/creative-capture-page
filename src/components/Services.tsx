@@ -74,7 +74,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="section bg-secondary/50">
+    <section id="services" className="section bg-secondary/50 dark:bg-secondary/5">
       <div className="container-custom">
         <div 
           ref={sectionRef} 
@@ -91,13 +91,13 @@ const Services = () => {
             <div
               key={index}
               ref={(el) => (serviceRefs.current[index] = el)}
-              className="animate-on-scroll glass-card rounded-xl p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+              className="animate-on-scroll glass-card rounded-xl p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-1 dark:bg-foreground/5 dark:border-white/10"
               style={{ animationDelay: `${0.1 * (index + 1)}s` }}
             >
-              <div className="p-3 rounded-lg bg-primary/10 text-primary inline-flex mb-4">
+              <div className="p-3 rounded-lg bg-primary/10 text-primary dark:bg-primary/20 dark:text-white inline-flex mb-4">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+              <h3 className="text-xl font-semibold mb-3 dark:text-white">{service.title}</h3>
               <p className="text-muted-foreground">{service.description}</p>
             </div>
           ))}

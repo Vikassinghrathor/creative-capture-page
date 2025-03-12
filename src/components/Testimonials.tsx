@@ -65,7 +65,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="section bg-primary/5">
+    <section id="testimonials" className="section bg-primary/5 dark:bg-white/5">
       <div className="container-custom">
         <div 
           ref={sectionRef}
@@ -81,8 +81,8 @@ const Testimonials = () => {
           ref={testimonialRef}
           className="animate-on-scroll max-w-4xl mx-auto"
         >
-          <div className="relative glass-card rounded-xl p-8 md:p-10 shadow-lg">
-            <Quote className="absolute top-6 left-6 h-12 w-12 text-primary/20" />
+          <div className="relative glass-card rounded-xl p-8 md:p-10 shadow-lg dark:bg-foreground/5 dark:border-white/10">
+            <Quote className="absolute top-6 left-6 h-12 w-12 text-primary/20 dark:text-accent/20" />
             
             <div className="space-y-6 text-center relative z-10 min-h-[180px]">
               {testimonials.map((testimonial, index) => (
@@ -96,9 +96,9 @@ const Testimonials = () => {
                       : 'opacity-0 translate-x-16'
                   }`}
                 >
-                  <p className="text-lg md:text-xl italic mb-6">"{testimonial.quote}"</p>
+                  <p className="text-lg md:text-xl italic mb-6 dark:text-white/90">"{testimonial.quote}"</p>
                   <div>
-                    <h4 className="font-medium">{testimonial.author}</h4>
+                    <h4 className="font-medium dark:text-white">{testimonial.author}</h4>
                     <p className="text-sm text-muted-foreground">{testimonial.position}</p>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ const Testimonials = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-2.5 h-2.5 rounded-full transition-all ${
-                    index === currentIndex ? 'bg-primary w-6' : 'bg-primary/30'
+                    index === currentIndex ? 'bg-primary dark:bg-accent w-6' : 'bg-primary/30 dark:bg-accent/30'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -121,14 +121,14 @@ const Testimonials = () => {
             <div className="flex justify-between mt-4">
               <button
                 onClick={prevTestimonial}
-                className="p-2 rounded-full bg-white/80 text-primary hover:bg-white transition-colors"
+                className="p-2 rounded-full bg-white/80 dark:bg-foreground/20 text-primary dark:text-white hover:bg-white dark:hover:bg-foreground/30 transition-colors"
                 aria-label="Previous testimonial"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={nextTestimonial}
-                className="p-2 rounded-full bg-white/80 text-primary hover:bg-white transition-colors"
+                className="p-2 rounded-full bg-white/80 dark:bg-foreground/20 text-primary dark:text-white hover:bg-white dark:hover:bg-foreground/30 transition-colors"
                 aria-label="Next testimonial"
               >
                 <ChevronRight className="h-5 w-5" />

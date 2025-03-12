@@ -1,5 +1,7 @@
+
 import { useEffect, useRef } from "react";
 import { CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const features = [
   "Strategic approach to content creation",
@@ -71,13 +73,13 @@ const About = () => {
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary dark:hidden rounded-lg"></div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-white dark:hidden rounded-lg shadow-lg"></div>
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary dark:bg-secondary/20 rounded-lg"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-white dark:bg-foreground/20 rounded-lg shadow-lg"></div>
           </div>
 
           {/* Right side - About Content */}
           <div ref={contentRef} className="animate-on-scroll space-y-6">
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-2xl font-semibold dark:text-white">
               Crafting Stories That Inspire Action
             </h3>
             <p className="text-muted-foreground">
@@ -97,17 +99,18 @@ const About = () => {
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start">
                   <CheckCircle className="h-5 w-5 text-accent mr-2 mt-0.5 flex-shrink-0" />
-                  <span>{feature}</span>
+                  <span className="dark:text-white/90">{feature}</span>
                 </div>
               ))}
             </div>
 
-            <a
-              href="#contact"
-              className="btn btn-primary px-6 py-3 mt-6 inline-flex dark:bg-accent dark:hover:bg-accent/90"
+            <Button
+              variant="accent"
+              className="px-6 py-3 mt-6 inline-flex"
+              asChild
             >
-              Work With Us
-            </a>
+              <a href="#contact">Work With Us</a>
+            </Button>
           </div>
         </div>
       </div>

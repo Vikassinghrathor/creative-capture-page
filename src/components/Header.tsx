@@ -55,7 +55,8 @@ const Header = () => {
           </button>
           
           <Button 
-            className="ml-4 px-6 py-6 bg-accent hover:bg-accent/90 text-accent-foreground font-medium shadow-lg hover:shadow-xl transition-all duration-300"
+            variant="accent"
+            className="ml-4 px-6 py-6 shadow-lg hover:shadow-xl transition-all duration-300"
           >
             Get Started Now
           </Button>
@@ -135,7 +136,8 @@ const Header = () => {
               Contact
             </a>
             <Button 
-              className="px-6 py-6 bg-accent hover:bg-accent/90 text-accent-foreground font-medium shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
+              variant="accent"
+              className="px-6 py-6 font-medium shadow-lg hover:shadow-xl transition-all duration-300 mt-4"
               onClick={toggleMobileMenu}
             >
               Get Started Now

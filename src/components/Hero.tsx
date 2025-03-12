@@ -1,13 +1,76 @@
 
 import { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+  });
+  const [formErrors, setFormErrors] = useState<{[key: string]: string}>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Clear error when user types
+    if (formErrors[name]) {
+      setFormErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const errors: {[key: string]: string} = {};
+    
+    // Name validation
+    if (!formData.name.trim()) {
+      errors.name = 'Name is required';
+    }
+    
+    // Email validation
+    if (!formData.email.trim()) {
+      errors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+    
+    return errors;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const errors = validateForm();
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+    
+    // Proceed with form submission
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+      });
+    }, 1500);
+  };
 
   return (
     <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
@@ -32,14 +95,82 @@ const Hero = () => {
                 We craft compelling content strategies and eye-catching designs that transform your brand messaging and drive measurable results.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in opacity-0" style={{ animationDelay: '0.5s' }}>
-                <a href="#contact" className="btn btn-primary px-6 py-3">
-                  Start Your Project
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-                <a href="#services" className="btn btn-secondary px-6 py-3">
-                  Explore Services
-                </a>
+              <div className="pt-4 animate-fade-in opacity-0" style={{ animationDelay: '0.5s' }}>
+                {!submitted ? (
+                  <form onSubmit={handleSubmit} className="glass-card p-6 rounded-xl dark:bg-foreground/5 dark:border-white/10">
+                    <h3 className="text-lg font-medium mb-4">Get Started Today</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium mb-1">
+                          Name <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className={`input-field w-full ${formErrors.name ? 'border-red-500' : ''} dark:bg-foreground/5 dark:border-white/10`}
+                          placeholder="Your name"
+                        />
+                        {formErrors.name && (
+                          <p className="mt-1 text-sm text-red-500">{formErrors.name}</p>
+                        )}
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium mb-1">
+                          Email <span className="text-red-500">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className={`input-field w-full ${formErrors.email ? 'border-red-500' : ''} dark:bg-foreground/5 dark:border-white/10`}
+                          placeholder="you@example.com"
+                        />
+                        {formErrors.email && (
+                          <p className="mt-1 text-sm text-red-500">{formErrors.email}</p>
+                        )}
+                      </div>
+
+                      <Button 
+                        type="submit"
+                        variant="accent"
+                        className="w-full py-6"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <span className="flex items-center justify-center">
+                            <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            Submitting...
+                          </span>
+                        ) : (
+                          <span className="flex items-center justify-center">
+                            Start Your Project <ArrowRight className="ml-2 h-4 w-4" />
+                          </span>
+                        )}
+                      </Button>
+                    </div>
+                  </form>
+                ) : (
+                  <div className="glass-card p-6 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700/30">
+                    <h3 className="text-lg font-medium mb-2 text-green-700 dark:text-green-300">Thank You!</h3>
+                    <p className="text-green-600 dark:text-green-400">We've received your information and will be in touch shortly.</p>
+                    <Button 
+                      variant="outline"
+                      className="mt-4"
+                      onClick={() => setSubmitted(false)}
+                    >
+                      Submit Another Request
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -69,7 +200,7 @@ const Hero = () => {
 
             {/* Floating elements */}
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary rounded-lg shadow-lg animate-float opacity-0 animate-fade-in" style={{ animationDelay: '0.7s' }}></div>
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-white rounded-lg shadow-lg animate-float opacity-0 animate-fade-in" style={{ animationDelay: '0.9s', animationDuration: '7s' }}></div>
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-white dark:bg-foreground/20 rounded-lg shadow-lg animate-float opacity-0 animate-fade-in" style={{ animationDelay: '0.9s', animationDuration: '7s' }}></div>
           </div>
         </div>
 
@@ -81,7 +212,7 @@ const Hero = () => {
             { value: '8', label: 'Years Experience' },
             { value: '40+', label: 'Team Members' }
           ].map((stat, i) => (
-            <div key={i} className="glass-card rounded-xl p-4 md:p-6 text-center">
+            <div key={i} className="glass-card rounded-xl p-4 md:p-6 text-center dark:bg-foreground/5 dark:border-white/10">
               <div className="text-2xl md:text-3xl font-bold text-primary mb-2">{stat.value}</div>
               <div className="text-sm text-muted-foreground">{stat.label}</div>
             </div>

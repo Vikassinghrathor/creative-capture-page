@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { toast } from "@/components/ui/use-toast";
 import { CheckCircle2, AlertCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -137,11 +138,11 @@ const ContactForm = () => {
             ref={formRef}
             className="animate-on-scroll"
           >
-            <div className="glass-card rounded-xl p-6 md:p-8 shadow-lg dark:shadow-none dark:border-white/10">
+            <div className="glass-card rounded-xl p-6 md:p-8 shadow-lg dark:shadow-none dark:bg-foreground/5 dark:border-white/10">
               <form onSubmit={handleSubmit}>
                 <div className="space-y-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium mb-1 dark:text-white/90">
                       Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -150,7 +151,7 @@ const ContactForm = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`input-field ${formErrors.name ? 'border-red-500' : ''} dark:bg-muted dark:border-white/10`}
+                      className={`input-field ${formErrors.name ? 'border-red-500' : ''} dark:bg-muted/10 dark:border-white/10 dark:text-white`}
                       placeholder="Your name"
                     />
                     {formErrors.name && (
@@ -162,7 +163,7 @@ const ContactForm = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium mb-1 dark:text-white/90">
                       Email <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -171,7 +172,7 @@ const ContactForm = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`input-field ${formErrors.email ? 'border-red-500' : ''} dark:bg-muted dark:border-white/10`}
+                      className={`input-field ${formErrors.email ? 'border-red-500' : ''} dark:bg-muted/10 dark:border-white/10 dark:text-white`}
                       placeholder="you@example.com"
                     />
                     {formErrors.email && (
@@ -183,7 +184,7 @@ const ContactForm = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-1">
+                    <label htmlFor="phone" className="block text-sm font-medium mb-1 dark:text-white/90">
                       Phone Number
                     </label>
                     <input
@@ -192,7 +193,7 @@ const ContactForm = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className={`input-field ${formErrors.phone ? 'border-red-500' : ''} dark:bg-muted dark:border-white/10`}
+                      className={`input-field ${formErrors.phone ? 'border-red-500' : ''} dark:bg-muted/10 dark:border-white/10 dark:text-white`}
                       placeholder="Your phone number (optional)"
                     />
                     {formErrors.phone && (
@@ -204,7 +205,7 @@ const ContactForm = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium mb-1 dark:text-white/90">
                       Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
@@ -213,7 +214,7 @@ const ContactForm = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className={`input-field resize-none ${formErrors.message ? 'border-red-500' : ''} dark:bg-muted dark:border-white/10`}
+                      className={`input-field resize-none ${formErrors.message ? 'border-red-500' : ''} dark:bg-muted/10 dark:border-white/10 dark:text-white`}
                       placeholder="Tell us about your project"
                     />
                     {formErrors.message && (
@@ -224,10 +225,11 @@ const ContactForm = () => {
                     )}
                   </div>
                   
-                  <button
+                  <Button
                     type="submit"
+                    variant="accent"
+                    className="w-full py-3"
                     disabled={isSubmitting}
-                    className="btn btn-primary w-full py-3 dark:bg-accent dark:hover:bg-accent/90"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">
@@ -242,7 +244,7 @@ const ContactForm = () => {
                         Send Message <CheckCircle2 className="ml-1.5 h-4 w-4" />
                       </span>
                     )}
-                  </button>
+                  </Button>
                 </div>
               </form>
             </div>
