@@ -1,69 +1,59 @@
-# Welcome to your Lovable project
+# Creative Agency Landing Page
 
-## Project info
+A clean, modern, and visually appealing landing page designed for a creative agency to generate leads through ads.
 
-**URL**: https://lovable.dev/projects/724dd20b-043b-43a5-aa59-95c9fd36f6ee
+## Project Overview
 
-## How can I edit this code?
+This landing page is designed as a lead generation tool for a creative agency called CreateStudios. It features a responsive design, dark/light mode toggle, animated sections, and fully functional forms for capturing potential client information.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Responsive Design**: Fully optimized for all device sizes (mobile, tablet, desktop)
+- **Dark/Light Mode**: Theme toggle with user preference persistence
+- **Animated Sections**: Smooth scroll-based animations for enhanced user experience
+- **Lead Capture Forms**: Validated forms in both hero and contact sections
+- **Testimonial Carousel**: Auto-scrolling testimonials with manual navigation
+- **Modern UI Elements**: Clean, professional design with attention to typography and spacing
+- **Optimized Performance**: Lightweight and fast-loading single HTML file
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/724dd20b-043b-43a5-aa59-95c9fd36f6ee) and start prompting.
+## Sections
 
-Changes made via Lovable will be committed automatically to this repo.
+1. **Header**: Navigation menu with theme toggle and call-to-action button
+2. **Hero**: Eye-catching headline with lead capture form
+3. **Services**: Comprehensive list of agency services with icons
+4. **About**: Agency overview with key features
+5. **Testimonials**: Client reviews carousel
+6. **Contact**: Detailed contact form with company information
+7. **Footer**: Additional navigation, social links, and copyright information
 
-**Use your preferred IDE**
+## Technical Implementation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **HTML5**: Semantic markup for improved accessibility and SEO
+- **CSS3**: Modern styling techniques including Flexbox, Grid, and CSS variables
+- **JavaScript**: Interactive functionality for form validation, animations, and theme switching
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+- **Animation**: Intersection Observer API for scroll-based animations
+- **Form Validation**: Client-side validation for both lead forms
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Customization
 
-Follow these steps:
+The landing page is designed to be easily customizable:
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Replace placeholder content with your actual agency information
+- Adjust color scheme by modifying CSS variables in the `:root` section
+- Add or remove services as needed
+- Update testimonials with real client feedback
+- Modify contact information and social media links
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Browser Support
 
-# Step 3: Install the necessary dependencies.
-npm i
+Optimized for modern browsers including:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Credits
 
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/724dd20b-043b-43a5-aa59-95c9fd36f6ee) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- Icons inspired by Lucide icon set
+- Font pairing: Montserrat and Playfair Display
