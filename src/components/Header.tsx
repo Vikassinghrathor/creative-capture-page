@@ -45,10 +45,10 @@ const Header = () => {
           <a href="#testimonials" className="nav-link">Testimonials</a>
           <a href="#contact" className="nav-link">Contact</a>
           
-          {/* Theme Toggle Button */}
+          {/* Theme Toggle Button - Updated color for dark mode */}
           <button 
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-secondary dark:bg-foreground/10 text-foreground dark:text-primary-foreground ml-2 transition-all hover:bg-muted"
+            className="p-2 rounded-full bg-secondary dark:bg-white/10 text-foreground dark:text-white ml-2 transition-all hover:bg-muted dark:hover:bg-white/20"
             aria-label="Toggle theme"
           >
             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
@@ -63,10 +63,10 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-3">
-          {/* Mobile Theme Toggle */}
+          {/* Mobile Theme Toggle - Updated color for dark mode */}
           <button 
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-secondary dark:bg-foreground/10 text-foreground dark:text-primary-foreground transition-all hover:bg-muted"
+            className="p-2 rounded-full bg-secondary dark:bg-white/10 text-foreground dark:text-white transition-all hover:bg-muted dark:hover:bg-white/20"
             aria-label="Toggle theme"
           >
             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}

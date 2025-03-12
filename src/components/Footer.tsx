@@ -121,13 +121,6 @@ const Footer = () => {
               Email: hello@createstudios.com<br />
               Phone: (555) 123-4567
             </p>
-            <button
-              onClick={scrollToTop}
-              className="p-2 rounded-full bg-white dark:bg-muted text-primary dark:text-white shadow-sm hover:bg-primary hover:text-white dark:hover:bg-accent transition-colors"
-              aria-label="Back to top"
-            >
-              <ArrowUp className="h-4 w-4" />
-            </button>
           </div>
         </div>
 
@@ -140,6 +133,15 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
+      {/* Fixed back to top button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-6 p-3 rounded-full bg-accent hover:bg-accent/90 text-white shadow-lg hover:shadow-xl transition-all z-50"
+        aria-label="Back to top"
+      >
+        <ArrowUp className="h-5 w-5" />
+      </button>
     </footer>
   );
 };
