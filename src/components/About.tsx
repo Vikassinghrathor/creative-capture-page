@@ -73,8 +73,8 @@ const About = () => {
             </div>
 
             {/* Decorative elements */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary dark:bg-secondary/20 rounded-lg"></div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-white dark:bg-foreground/20 rounded-lg shadow-lg"></div>
+            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary dark:hidden rounded-lg"></div>
+            <div className="absolute -top-6 -left-6 w-24 h-24 bg-white dark:hidden rounded-lg shadow-lg"></div>
           </div>
 
           {/* Right side - About Content */}
